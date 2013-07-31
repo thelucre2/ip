@@ -1,0 +1,10 @@
+InstaPIXEL
+
+CLIENT INFO
+CLIENT ID	94070540ddb543e793c98677dbf410c7
+CLIENT SECRET	96e0b3c5f40c430e98436697da6acd10
+
+WEBSITE URL	http://www.thelucre.com/test/instapixel
+REDIRECT URI	http://www.thelucre.com/test/instapixel
+
+This HTML5 web app will retrieve and pixelate instagram images for those who are of the 8-bit persuasion.

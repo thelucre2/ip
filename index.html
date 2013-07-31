@@ -1,0 +1,132 @@
+<html>
+
+<head>
+	<title>instaPIXEL : for ye, of 8-bit persuasion</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+</head>
+<body>
+	
+	
+	<script type-"text/javascript" src="js/vendor/jquery-1.9.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/vendor/jquery-ui.js"></script> 
+	<script src="js/vendor/jcanvas.min.js"></script>
+	<script type-"text/javascript" src="js/vendor/bootstrap.js"></script>
+	<script type-"text/javascript" src="js/settings.js"></script>
+	<script type-"text/javascript" src="js/main2.js"></script>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span">
+			</div>
+		</div>
+
+		<div class="row-fluid heading">
+			<div class="span3 border" id="col1">
+				<div id="containter-instagram-link">
+	        		<h5>your instagram username</h5>
+	        		<form class="form-inline">
+					  <input id="user-name" type="text" class="input input-large" value="thelucre">
+					  <button id="btn-submit" type="submit" class="btn btn-primary">get it!</button>
+					</form>
+	        	</div>
+	        	<div id="container-slider">
+	        		<div id="slider"></div>
+	        	</div>
+	        	<div id="container-instagram-images">
+	        		<div class="loading" id="loading-thumbs"><img src="img/AjaxLoader.gif" /></div>
+	        	</div>
+			</div>
+	        <div class="span7 border" id="col2">
+	         	<canvas id="canvdraw" width="612" height="612"></canvas>
+	         	<div class="loading" id="loading-canvas"><img src="img/AjaxLoader.gif" /></div>
+	        </div>
+	        <div class="span2 border" id="col3">
+	        	
+	        	<div id="containter-original-image">
+	        		<h5>the original image</h5>
+	        		<img id="original-image" width="100%"/>
+	        		<div class="loading" id="loading-original"><img src="img/AjaxLoader.gif" /></div>
+	        	</div>
+	        	<div class="row"><div class="span"></div></div>
+		        	<div if="container-save-button">
+		        		<h5>save as-is for instagram</h5>
+		        		<button id="btn-save-image" class="btn btn-large btn-block btn-primary save-img" enabled type="button">save  612px x 612px</button>
+		        	<div>
+	        	<div class="row"><div class="span"></div></div>
+	        		<div if="container-hires-buttons">
+	        			<h5>Download Print-Res Versions:</h5>
+	        			<button id="btn-save-hi-res-04" class="btn btn-block btn-info hi-res" type="button"><strong>4" x 4"</strong> @ 300dpi</button>
+	        			<button id="btn-save-hi-res-06" class="btn btn-block btn-success hi-res" type="button"><strong>6" x 6"</strong> @ 300dpi</button>
+	        			<button id="btn-save-hi-res-08" class="btn btn-block btn-warning hi-res" type="button"><strong>8" x 8"</strong> @ 300dpi</button>
+	        			<button id="btn-save-hi-res-10" class="btn btn-block btn-danger hi-res" type="button"><strong>10" x 10"</strong> @ 300dpi</button>
+	        			<button id="btn-save-hi-res-12" class="btn btn-block btn-inverse hi-res" type="button"><strong>12" x 12"</strong> @ 300dpi</button>
+	        			<div class="loading" id="loading-save"><img src="img/AjaxLoader.gif" /></div>
+	        		</div>
+	        </div>
+      </div> 
+	</div>
+
+	<style>
+		.border { border:#000 0px solid;  }
+		.100-percent-wide { width: 100%; }
+		#col1 { width: 275px; position: relative; }
+		#col2 { width: 612px; position: relative; }
+		#col3 { width: 190px; position: relative; }
+		#container-slider { 
+			float:right;
+			width:30px;
+		}
+		#container-instagram-images {
+			width:205px;
+			height:515px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			background:#fff;
+		}
+		.instathumb {
+			margin:0 5px 5px 0;
+			width:80px;
+			border:2px #ccc solid;
+		}
+		#user-name {
+			height: 31px;
+			margin-top: 1px;
+		}
+		.instathumb:hover {
+			border:2px #000 solid;
+			cursor: pointer;
+		}
+		.loading {
+			position: absolute;
+			width:128px;
+			height:128px;
+
+			top:0; left:0;
+			display: none;
+		}
+		.ui-state-default,
+		.ui-widget-content .ui-state-default,
+		.ui-widget-header .ui-state-default {
+			border:3px solid #c00;
+			background: #eee;
+			width:40px;
+			border-radius: 0;
+			background-image: url('img/grab.png');
+		}
+		.ui-slider-vertical .ui-slider-handle {
+			left:-17px;
+		}
+		.ui-widget-content {
+			background:#ccc;
+			border-radius: 0;
+			border: #333 3px solid;
+		}
+	</style>
+<body>
+<html>

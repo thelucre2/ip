@@ -1,0 +1,99 @@
+
+
+
+
+
+JS instagram image link							- requestServerImage( { 'type' : 'instalink' / 'directURL' } )
+
+PHP parse instagram image path					- parseInstagramImageURL( $link )
+
+PHP retrieve image and convert to base 64		- writeBase64Image( $srcURL )
+
+JS write base64 image to img element			- createImageContext( domID )
+
+JS write original in smaller size to html		- displaySmallImage( img )
+
+JS get pixel data								- getPixelDataArray( ) // uses the global canvas 
+
+JS draw to canvas 								- drawPixelatedToCanvas( size ) 
+
+JS save pixelated image directly				- saveCanvasImage()
+
+JS render print size scaled images for saving	- renderPrintImage(size)
+
+
+FEATURES TO ADD:
+
+most common colors + add layout to left column
+add thumbs and reprocess pixelation when clicked (need online)
+save image button
+new window pop-up to hi-res download buttons (shoud be so fuckin fast! n^_^n )
+clear functions ( wipe thumbnail vars and tags, thumbcount, canvas (to default IP logo), disable all buttons and slider )
+tool tips for slider 
+	after slid first, then for instagram username box
+add button to activate username AJAX - just beide the textbox, shrink dat
+consider footer information
+	why? be-fuckin'-cause
+	who am i'
+	bootstrap, jcanvas (not really...), jquery, jquery ui
+
+	to come:
+		mobile  tablet friendly
+		instagram mobile hooks (if this look apropos)
+
+	contact:
+		hello@thelucre - suggestion, problems, long walks on the beach
+		linkedin.com/in/ericmhoward?
+		thelucre.com
+		instagram.com/thelucre
+
+
+draw a scaled canvas image 
+
+ex: width:  300
+	height: 300
+	size: 5
+	pixels: wide 612
+	pixels: high 612
+
+300 / 612 = 0.490196078
+
+each pixel = 0.490196078 canvas pixels
+
+size 5 = 5 * 0.490196078 = 2.45098039 canvas pixels
+
+
+
+need:
+
+// size of the tile requested (in normal pixels)
+size = 5; 
+
+// amount to scale each pixel drawn for cnavas size
+canvscale = canv.width / 612; // 0.490196078
+
+// size of the tile to be drawn
+canvtile = size * canvscale;
+
+// number of pixels in row or column (scaled for canvas size)
+var tiles = { 'x': Math.floor(canvdraw.width / canvtile),
+  		  	  'y': Math.floor(canvdraw.height / canvtile) };
+
+var pad = { 'x': canvdraw.width % canvtile,
+  			'y': canvdraw.height % canvtile };
+
+
+
+for(var x = 0; x < tiles.x; x++) {
+    for(var y = 0; y < tiles.y; y++) {  
+		var colorCoords = { 'x': Math.floor(x * canvtile + canvtile + canvtile / 2),
+						 'y': Math.floor(y * canvtile + canvtile + canvtile / 2) };
+        ctx.fillStyle = pix[colorCoords.y][colorCoords.x];
+		ctx.fillRect(x * canvtile, y * canvtile, 
+			x * canvtile + canvtile, 
+			y * canvtile + canvtile );
+	}
+}
+
+
+size of the tile = canvsize / 612 * size

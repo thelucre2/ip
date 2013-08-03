@@ -61,8 +61,15 @@ function beginPixelationProcess(urlimg) {
 			    canvimg.id = MAIN_CANVAS.substring(1);
 			    ctximg.drawImage( img, 0, 0 );
 			    $( ORIGINAL_IMAGE ).replaceWith(img);
+
+
+			    var tstcanv = document.getElementById('canvdraw');
+			    var tstctx = tstcanv.getContext('2d');
+			    tstctx.drawImage( img, 0, 0 );
+
+
 			    getPixelDataArray( );
-				drawPixelatedToCanvas( getSliderValue(), true, null);
+				//drawPixelatedToCanvas( getSliderValue(), true, null);
 				// all done, activate GUI buttons and things
 				console.log('toggling');
 				//toggleGUI( 'enabled', 'save' );
@@ -311,7 +318,7 @@ function resetDefaults() {
  *********************************************/
 function setupEventHandlers() {
 	canvdraw = document.getElementById( MAIN_CANVAS.substring(1) );
-	getInstagramUserId();
+/*	getInstagramUserId();
 	// start the pixelation process!
 	$( GET_USER_BTN ).click( function(e) {
 		toggleLoader( true, 'thumbs' );
@@ -359,7 +366,7 @@ function setupEventHandlers() {
 	$( CLEAR_CANVAS_BTN ).click( function() {
 		resetDefaults();
 	});
-
+*/
 	// determines when to update the image pixel processing
 	$( SLIDER ).slider({ 
 		orientation: "vertical", 
